@@ -17,6 +17,8 @@
 -- SQL-запрос
 SELECT * FROM A JOIN B ON A.a = B.b;
 
+/*
+
 -- Результат запроса
       a    b
       7    7
@@ -25,10 +27,13 @@ SELECT * FROM A JOIN B ON A.a = B.b;
       3    3
       1    1
       
+*/      
       
 -- SQL-запрос
 SELECT * FROM A LEFT JOIN B ON A.a = B.b;
 
+/*
+
 -- Результат запроса
       a    b
       7    7
@@ -40,10 +45,13 @@ SELECT * FROM A LEFT JOIN B ON A.a = B.b;
       1    1
       NULL NULL
       
+ */     
       
 -- SQL-запрос
 SELECT * FROM A RIGHT JOIN B ON A.a = B.b;
 
+/*
+
 -- Результат запроса
       a    b
       1    1
@@ -55,9 +63,12 @@ SELECT * FROM A RIGHT JOIN B ON A.a = B.b;
       NULL NULL
       NULL NULL
       
+*/      
       
 -- SQL-запрос
 SELECT * FROM A FULL JOIN B ON A.a = B.b;
+
+/*
 
 -- Результат запроса
       a    b
@@ -71,7 +82,7 @@ SELECT * FROM A FULL JOIN B ON A.a = B.b;
       NULL NULL
       NULL NULL
       
-      
+*/      
       
 /*
 
@@ -90,13 +101,14 @@ name    | mark |    subj    |
 
 */
 
-SELECT COUNT(mark), name 
-FROM table
-WHERE  mark = 5 AND 
-  name IN (SELECT name 
-    FROM table 
-    WHERE mark = 2 
-    GROUP BY name 
-    HAVING COUNT(mark) > 3
-    )
+SELECT COUNT(mark),
+       name
+FROM TABLE
+WHERE mark = 5
+  AND name IN
+    (SELECT name
+     FROM TABLE
+     WHERE mark = 2
+     GROUP BY name
+     HAVING COUNT(mark) > 3)
 GROUP BY name;
