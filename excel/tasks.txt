@@ -1,1 +1,0 @@
-Файлы praktiki_operativnoy_analitiki_excel_1, praktiki_operativnoy_analitiki_excel_2 содержат решения задач из курса "Практики оперативной аналитики в MS Excel". final_project является итоговым проектом.
